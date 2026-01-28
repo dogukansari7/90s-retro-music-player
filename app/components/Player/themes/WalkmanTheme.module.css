@@ -1,0 +1,393 @@
+/* Sony Walkman CD Player Theme */
+
+.player {
+    width: 100%;
+    max-width: 280px;
+    background: linear-gradient(180deg, #d0d0d0 0%, #b0b0b0 50%, #909090 100%);
+    border: 3px solid #e0e0e0;
+    border-bottom-color: #707070;
+    border-right-color: #707070;
+    border-radius: 140px 140px 30px 30px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    font-family: 'VT323', monospace;
+}
+
+/* CD Lid */
+.cdLid {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 15px;
+    background: linear-gradient(180deg, #1a1a2a, #0a0a1a);
+    border-radius: 50%;
+    border: 4px solid #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        inset 0 0 30px rgba(0, 0, 0, 0.8),
+        0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.cdDisc {
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle,
+            transparent 15%,
+            #c0c0c0 15%,
+            #e0e0e0 20%,
+            #a0a0a0 25%,
+            #d0d0d0 40%,
+            #b0b0b0 60%,
+            #c0c0c0 80%,
+            #a0a0a0 100%);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cdDisc.spinning {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.cdLabel {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #0066cc, #003399);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 6px;
+    letter-spacing: 1px;
+}
+
+.cdHole {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #1a1a2a;
+    border-radius: 50%;
+}
+
+.cdRing {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #888;
+    border-radius: 50%;
+}
+
+/* LCD Screen */
+.lcdScreen {
+    background: linear-gradient(180deg, #1a3a1a, #0a2a0a);
+    border: 3px solid #666;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 12px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.lcdRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.trackNum {
+    color: #00ff88;
+    font-size: 14px;
+    text-shadow: 0 0 5px #00ff88;
+}
+
+.lcdTime {
+    color: #00ff88;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 0 0 8px #00ff88;
+}
+
+.lcdSongName {
+    color: #00ff88;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 5px;
+    text-shadow: 0 0 5px #00ff88;
+    letter-spacing: 1px;
+}
+
+.batteryIndicator {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+}
+
+.batteryIndicator span {
+    font-size: 12px;
+}
+
+.batteryLevel {
+    width: 40px;
+    height: 8px;
+    background: #0a2a0a;
+    border: 1px solid #00ff88;
+    border-radius: 2px;
+}
+
+.batteryFill {
+    height: 100%;
+    background: #00ff88;
+    border-radius: 1px;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.controlBtn {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(180deg, #e0e0e0, #c0c0c0);
+    border: 2px solid #d0d0d0;
+    border-bottom-color: #808080;
+    border-right-color: #808080;
+    border-radius: 50%;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.1s;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.controlBtn:hover {
+    background: linear-gradient(180deg, #f0f0f0, #d0d0d0);
+}
+
+.controlBtn:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Volume */
+.volumeRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: linear-gradient(180deg, #c0c0c0, #a0a0a0);
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.volLabel {
+    color: #333;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.volumeSlider {
+    flex: 1;
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #606060;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.volumeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    background: linear-gradient(180deg, #0088ff, #0055aa);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.volumeSlider::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    background: linear-gradient(180deg, #0088ff, #0055aa);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Bottom Row */
+.bottomRow {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.holdSwitch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.holdSwitch span {
+    color: #555;
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+.switchTrack {
+    width: 30px;
+    height: 12px;
+    background: #606060;
+    border-radius: 6px;
+    padding: 2px;
+}
+
+.switchThumb {
+    width: 10px;
+    height: 8px;
+    background: linear-gradient(180deg, #ff6600, #cc5200);
+    border-radius: 4px;
+}
+
+.bassBoost {
+    display: flex;
+    align-items: center;
+    padding: 4px 10px;
+    background: linear-gradient(180deg, #0066cc, #004499);
+    border-radius: 10px;
+}
+
+.bassBoost span {
+    color: #fff;
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+    .player {
+        max-width: 100%;
+        padding: 15px;
+        border-radius: 100px 100px 25px 25px;
+    }
+
+    .cdLid {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 12px;
+    }
+
+    .cdDisc {
+        width: 120px;
+        height: 120px;
+    }
+
+    .cdLabel {
+        width: 40px;
+        height: 40px;
+        font-size: 5px;
+    }
+
+    .cdRing {
+        width: 24px;
+        height: 24px;
+    }
+
+    .lcdScreen {
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+
+    .trackNum {
+        font-size: 12px;
+    }
+
+    .lcdTime {
+        font-size: 14px;
+    }
+
+    .lcdSongName {
+        font-size: 10px;
+    }
+
+    .controls {
+        gap: 4px;
+        margin-bottom: 10px;
+    }
+
+    .controlBtn {
+        width: 34px;
+        height: 34px;
+        font-size: 12px;
+    }
+
+    .volumeRow {
+        padding: 6px 10px;
+        gap: 6px;
+        margin-bottom: 10px;
+    }
+
+    .volLabel {
+        font-size: 8px;
+    }
+
+    .bottomRow {
+        padding: 0 5px;
+    }
+
+    .holdSwitch span {
+        font-size: 7px;
+    }
+
+    .bassBoost {
+        padding: 3px 8px;
+    }
+
+    .bassBoost span {
+        font-size: 7px;
+    }
+}
+
+/* Responsive - Small Mobile */
+@media (max-width: 360px) {
+    .player {
+        padding: 12px;
+    }
+
+    .cdLid {
+        width: 130px;
+        height: 130px;
+    }
+
+    .cdDisc {
+        width: 100px;
+        height: 100px;
+    }
+
+    .controlBtn {
+        width: 30px;
+        height: 30px;
+        font-size: 10px;
+    }
+}

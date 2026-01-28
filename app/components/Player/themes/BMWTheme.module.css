@@ -1,0 +1,415 @@
+/* BMW E30/E38 Car Stereo Theme */
+
+.player {
+    width: 100%;
+    max-width: 380px;
+    background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 50%, #0f0f0f 100%);
+    border: 4px solid #444;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.8),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    font-family: 'VT323', monospace;
+}
+
+/* LCD Display */
+.lcdDisplay {
+    background: #0a0a00;
+    border: 3px solid #333;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 15px;
+    box-shadow: inset 0 0 15px rgba(255, 140, 0, 0.1);
+}
+
+.lcdTop {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.radioFreq {
+    color: #ff8c00;
+    font-size: 14px;
+    text-shadow: 0 0 10px #ff8c00;
+}
+
+.lcdTime {
+    color: #ff8c00;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0 0 10px #ff8c00;
+}
+
+.lcdSong {
+    color: #ff8c00;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 8px;
+    text-shadow: 0 0 8px #ff8c00;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.lcdProgress {
+    height: 4px;
+    background: #1a1a00;
+    border-radius: 2px;
+}
+
+.lcdProgressBar {
+    height: 100%;
+    background: #ff8c00;
+    border-radius: 2px;
+    box-shadow: 0 0 8px #ff8c00;
+    transition: width 0.1s;
+}
+
+/* Cassette Slot */
+.cassetteSlot {
+    background: linear-gradient(180deg, #1a1a1a, #0a0a0a);
+    border: 3px solid #333;
+    border-radius: 8px;
+    padding: 8px;
+    margin-bottom: 15px;
+}
+
+.cassetteInner {
+    background: linear-gradient(180deg, #2a2a2a, #1a1a1a);
+    border: 2px solid #444;
+    border-radius: 4px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.cassetteLabel {
+    color: #888;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.cassetteReels {
+    display: flex;
+    gap: 60px;
+}
+
+.reel {
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, #444 0%, #222 50%, #444 100%);
+    border-radius: 50%;
+    border: 2px solid #555;
+    position: relative;
+}
+
+.reel::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background: #1a1a1a;
+    border-radius: 50%;
+}
+
+.reel.spinning {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Preset Buttons */
+.presetRow {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.presetBtn {
+    width: 45px;
+    height: 35px;
+    background: linear-gradient(180deg, #3a3a3a, #1a1a1a);
+    border: 2px solid #555;
+    border-radius: 4px;
+    color: #ff8c00;
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.presetBtn:hover {
+    background: linear-gradient(180deg, #4a4a4a, #2a2a2a);
+}
+
+.presetBtn.active {
+    background: linear-gradient(180deg, #1a1a1a, #0a0a0a);
+    box-shadow: 0 0 10px rgba(255, 140, 0, 0.5), inset 0 0 5px rgba(255, 140, 0, 0.3);
+    border-color: #ff8c00;
+}
+
+/* Control Row */
+.controlRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.seekBtn {
+    padding: 10px 15px;
+    background: linear-gradient(180deg, #3a3a3a, #1a1a1a);
+    border: 2px solid #555;
+    border-radius: 6px;
+    color: #ff8c00;
+    font-family: 'VT323', monospace;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.seekBtn:hover {
+    background: linear-gradient(180deg, #4a4a4a, #2a2a2a);
+}
+
+.seekBtn:active {
+    transform: scale(0.95);
+}
+
+.playControls {
+    display: flex;
+    gap: 10px;
+}
+
+.playBtn,
+.stopBtn {
+    width: 50px;
+    height: 40px;
+    background: linear-gradient(180deg, #4a4a4a, #2a2a2a);
+    border: 2px solid #666;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.playBtn:hover,
+.stopBtn:hover {
+    background: linear-gradient(180deg, #5a5a5a, #3a3a3a);
+}
+
+.playBtn:active,
+.stopBtn:active {
+    transform: scale(0.95);
+}
+
+/* Volume Knob */
+.volumeSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    background: linear-gradient(180deg, #222, #111);
+    border: 2px solid #333;
+    border-radius: 8px;
+}
+
+.volumeKnob {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #3a3a3a, #1a1a1a, #3a3a3a);
+    border-radius: 50%;
+    border: 3px solid #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.knobInner {
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, #4a4a4a, #2a2a2a);
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.1s;
+}
+
+.knobMarker {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 12px;
+    background: #ff8c00;
+    border-radius: 2px;
+    box-shadow: 0 0 5px #ff8c00;
+}
+
+.volumeLabel {
+    color: #888;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+    .player {
+        max-width: 100%;
+        padding: 12px;
+    }
+
+    .lcdDisplay {
+        padding: 10px;
+        margin-bottom: 12px;
+    }
+
+    .radioFreq {
+        font-size: 12px;
+    }
+
+    .lcdTime {
+        font-size: 16px;
+    }
+
+    .lcdSong {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    .cassetteSlot {
+        padding: 6px;
+        margin-bottom: 12px;
+    }
+
+    .cassetteInner {
+        padding: 8px;
+    }
+
+    .cassetteLabel {
+        font-size: 8px;
+    }
+
+    .cassetteReels {
+        gap: 45px;
+    }
+
+    .reel {
+        width: 24px;
+        height: 24px;
+    }
+
+    .presetRow {
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    .presetBtn {
+        width: 38px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .controlRow {
+        margin-bottom: 12px;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .seekBtn {
+        padding: 8px 12px;
+        font-size: 10px;
+    }
+
+    .playControls {
+        gap: 8px;
+    }
+
+    .playBtn,
+    .stopBtn {
+        width: 44px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .volumeSection {
+        padding: 8px;
+    }
+
+    .volumeKnob {
+        width: 50px;
+        height: 50px;
+    }
+
+    .knobInner {
+        width: 42px;
+        height: 42px;
+    }
+
+    .knobMarker {
+        height: 10px;
+        width: 2px;
+    }
+
+    .volumeLabel {
+        font-size: 9px;
+    }
+}
+
+/* Responsive - Small Mobile */
+@media (max-width: 360px) {
+    .player {
+        padding: 10px;
+    }
+
+    .lcdTime {
+        font-size: 14px;
+    }
+
+    .lcdSong {
+        font-size: 12px;
+    }
+
+    .presetBtn {
+        width: 32px;
+        height: 26px;
+        font-size: 12px;
+    }
+
+    .playBtn,
+    .stopBtn {
+        width: 40px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .volumeKnob {
+        width: 45px;
+        height: 45px;
+    }
+
+    .knobInner {
+        width: 38px;
+        height: 38px;
+    }
+}

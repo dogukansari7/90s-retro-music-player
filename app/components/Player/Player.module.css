@@ -1,0 +1,448 @@
+/* Retro 90s Winamp-style Player */
+
+.player {
+  width: 100%;
+  max-width: 320px;
+  background: linear-gradient(180deg, #3a3a4a 0%, #1a1a2e 50%, #0f0f1a 100%);
+  border: 3px solid #555;
+  border-top-color: #888;
+  border-left-color: #888;
+  border-radius: 4px;
+  padding: 4px;
+  box-shadow:
+    inset 0 0 10px rgba(0, 0, 0, 0.5),
+    0 8px 32px rgba(0, 0, 0, 0.8),
+    0 0 0 1px #000;
+  font-family: 'VT323', monospace;
+}
+
+/* Title Bar - Classic Windows 95 style */
+.titleBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #000080, #1084d0, #000080);
+  padding: 3px 6px;
+  margin-bottom: 4px;
+  border: 1px solid #000;
+}
+
+.titleText {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 #000;
+  letter-spacing: 1px;
+}
+
+.titleButtons {
+  display: flex;
+  gap: 2px;
+}
+
+.titleBtn {
+  width: 16px;
+  height: 14px;
+  background: #c0c0c0;
+  border: 2px solid;
+  border-top-color: #fff;
+  border-left-color: #fff;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+  font-size: 10px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.titleBtn:active {
+  border-top-color: #808080;
+  border-left-color: #808080;
+  border-right-color: #fff;
+  border-bottom-color: #fff;
+}
+
+/* LCD Display Screen */
+.display {
+  background: #0a1a0a;
+  border: 3px solid;
+  border-top-color: #222;
+  border-left-color: #222;
+  border-right-color: #555;
+  border-bottom-color: #555;
+  padding: 10px;
+  margin-bottom: 6px;
+}
+
+/* Visualizer Bars */
+.visualizer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 40px;
+  margin-bottom: 8px;
+  gap: 2px;
+}
+
+.bar {
+  flex: 1;
+  background: linear-gradient(to top, #00ff00, #80ff00, #ffff00, #ff8000, #ff0000);
+  min-height: 3px;
+  transition: height 0.1s ease;
+  animation: pulse 0.3s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.8;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Song Info */
+.songInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.songName {
+  flex: 1;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.marquee {
+  display: inline-block;
+  color: #00ff00;
+  font-size: 18px;
+  text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+  white-space: nowrap;
+  animation: marquee 8s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.timeDisplay {
+  color: #00ff00;
+  font-size: 16px;
+  text-shadow: 0 0 5px #00ff00;
+  white-space: nowrap;
+}
+
+/* Progress Bar */
+.progressContainer {
+  height: 8px;
+  background: #001a00;
+  border: 1px solid #004400;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background: linear-gradient(to right, #00aa00, #00ff00);
+  box-shadow: 0 0 5px #00ff00;
+  transition: width 0.1s linear;
+}
+
+/* Control Buttons */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 4px;
+  background: linear-gradient(180deg, #4a4a5a, #2a2a3e);
+  border: 2px solid;
+  border-top-color: #666;
+  border-left-color: #666;
+  border-right-color: #222;
+  border-bottom-color: #222;
+  margin-bottom: 6px;
+}
+
+.controlBtn {
+  width: 44px;
+  height: 32px;
+  background: linear-gradient(180deg, #5a5a6a, #3a3a4a);
+  border: 3px solid;
+  border-top-color: #888;
+  border-left-color: #888;
+  border-right-color: #333;
+  border-bottom-color: #333;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 0 3px #fff;
+  transition: all 0.1s;
+}
+
+.controlBtn:hover {
+  background: linear-gradient(180deg, #6a6a7a, #4a4a5a);
+}
+
+.controlBtn:active {
+  border-top-color: #333;
+  border-left-color: #333;
+  border-right-color: #888;
+  border-bottom-color: #888;
+  transform: translateY(1px);
+}
+
+/* Volume Control */
+.volumeContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background: linear-gradient(180deg, #3a3a4a, #2a2a3e);
+  border: 2px solid;
+  border-top-color: #666;
+  border-left-color: #666;
+  border-right-color: #222;
+  border-bottom-color: #222;
+  margin-bottom: 6px;
+}
+
+.volumeIcon {
+  font-size: 16px;
+}
+
+.volumeSlider {
+  flex: 1;
+  height: 8px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #001a00;
+  border: 1px solid #004400;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.volumeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 20px;
+  background: linear-gradient(180deg, #00ff00, #00aa00);
+  border: 2px solid;
+  border-top-color: #00ff00;
+  border-left-color: #00ff00;
+  border-right-color: #004400;
+  border-bottom-color: #004400;
+  cursor: pointer;
+  box-shadow: 0 0 5px #00ff00;
+}
+
+.volumeSlider::-moz-range-thumb {
+  width: 12px;
+  height: 20px;
+  background: linear-gradient(180deg, #00ff00, #00aa00);
+  border: 2px solid;
+  border-top-color: #00ff00;
+  border-left-color: #00ff00;
+  border-right-color: #004400;
+  border-bottom-color: #004400;
+  cursor: pointer;
+  box-shadow: 0 0 5px #00ff00;
+}
+
+.volumeValue {
+  color: #00ff00;
+  font-size: 14px;
+  min-width: 40px;
+  text-align: right;
+  text-shadow: 0 0 5px #00ff00;
+}
+
+/* Playlist */
+.playlist {
+  background: #0a0a14;
+  border: 2px solid;
+  border-top-color: #222;
+  border-left-color: #222;
+  border-right-color: #555;
+  border-bottom-color: #555;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.playlistTitle {
+  background: linear-gradient(90deg, #000080, #1084d0, #000080);
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.playlistItem {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  color: #00cc00;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-bottom: 1px solid #1a1a2e;
+}
+
+.playlistItem:hover {
+  background: #1a2a1a;
+}
+
+.playlistItem.active {
+  background: #002200;
+  color: #00ff00;
+  text-shadow: 0 0 5px #00ff00;
+}
+
+.trackNumber {
+  margin-right: 8px;
+  color: #008800;
+  min-width: 20px;
+}
+
+.trackName {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Scrollbar styling */
+.playlist::-webkit-scrollbar {
+  width: 12px;
+}
+
+.playlist::-webkit-scrollbar-track {
+  background: #0a0a14;
+  border-left: 1px solid #333;
+}
+
+.playlist::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #4a4a5a, #2a2a3e);
+  border: 2px solid;
+  border-top-color: #666;
+  border-left-color: #666;
+  border-right-color: #222;
+  border-bottom-color: #222;
+}
+
+.playlist::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #5a5a6a, #3a3a4e);
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+  .player {
+    max-width: 100%;
+    padding: 3px;
+  }
+
+  .titleBar {
+    padding: 2px 4px;
+  }
+
+  .titleText {
+    font-size: 10px;
+  }
+
+  .display {
+    padding: 8px;
+  }
+
+  .visualizer {
+    height: 30px;
+    margin-bottom: 6px;
+  }
+
+  .marquee {
+    font-size: 14px;
+  }
+
+  .timeDisplay {
+    font-size: 12px;
+  }
+
+  .controls {
+    gap: 3px;
+    padding: 6px 3px;
+  }
+
+  .controlBtn {
+    width: 36px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .volumeContainer {
+    padding: 6px;
+    gap: 6px;
+  }
+
+  .volumeIcon {
+    font-size: 14px;
+  }
+
+  .volumeValue {
+    font-size: 12px;
+    min-width: 35px;
+  }
+
+  .playlist {
+    max-height: 120px;
+  }
+
+  .playlistTitle {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+
+  .playlistItem {
+    padding: 5px 8px;
+    font-size: 12px;
+  }
+
+  .trackNumber {
+    min-width: 16px;
+    margin-right: 6px;
+  }
+}
+
+/* Responsive - Small Mobile */
+@media (max-width: 360px) {
+  .controlBtn {
+    width: 32px;
+    height: 26px;
+    font-size: 11px;
+  }
+
+  .titleText {
+    font-size: 9px;
+  }
+
+  .marquee {
+    font-size: 12px;
+  }
+
+  .timeDisplay {
+    font-size: 11px;
+  }
+}

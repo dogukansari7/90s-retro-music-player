@@ -1,0 +1,394 @@
+/* 80s Boombox / Ghetto Blaster Theme */
+
+.player {
+    width: 100%;
+    max-width: 500px;
+    background: linear-gradient(180deg, #4a4a4a 0%, #3a3a3a 50%, #2a2a2a 100%);
+    border: 4px solid #555;
+    border-top-color: #666;
+    border-left-color: #666;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    font-family: 'VT323', monospace;
+    position: relative;
+}
+
+/* Handle */
+.handle {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 20px;
+    background: linear-gradient(180deg, #555, #333);
+    border-radius: 10px 10px 0 0;
+    border: 3px solid #666;
+    border-bottom: none;
+}
+
+/* Main Body */
+.body {
+    display: flex;
+    gap: 15px;
+    padding-top: 10px;
+}
+
+/* Speakers */
+.speaker {
+    width: 120px;
+    flex-shrink: 0;
+}
+
+.speakerCone {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 10px;
+    background: radial-gradient(circle, #1a1a1a 20%, #333 40%, #1a1a1a 60%, #333 80%, #1a1a1a 100%);
+    border-radius: 50%;
+    border: 4px solid #444;
+    position: relative;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.speakerInner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, #666, #333);
+    border-radius: 50%;
+    border: 2px solid #555;
+}
+
+.speakerGrill {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.grillLine {
+    height: 4px;
+    background: linear-gradient(90deg, #333, #444, #333);
+    border-radius: 2px;
+}
+
+/* Center Section */
+.center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* VU Meters */
+.vuMeters {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.vuMeter {
+    width: 80px;
+    height: 50px;
+    background: linear-gradient(180deg, #fffff0, #f0f0e0);
+    border: 3px solid #888;
+    border-radius: 8px 8px 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.vuNeedle {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    width: 2px;
+    height: 35px;
+    background: linear-gradient(180deg, #ff0000, #cc0000);
+    transform-origin: bottom center;
+    transition: transform 0.1s;
+}
+
+.vuScale {
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    right: 10px;
+    height: 2px;
+    background: linear-gradient(90deg, #00ff00, #ffff00, #ff0000);
+    border-radius: 1px;
+}
+
+/* Display */
+.display {
+    background: #0a0a0a;
+    border: 3px solid #333;
+    border-radius: 6px;
+    padding: 8px;
+}
+
+.freqDisplay {
+    color: #ff4444;
+    font-size: 12px;
+    text-shadow: 0 0 5px #ff4444;
+}
+
+.songDisplay {
+    color: #ffd700;
+    font-size: 16px;
+    text-align: center;
+    margin: 5px 0;
+    text-shadow: 0 0 8px #ffd700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.timeDisplay {
+    color: #00ff00;
+    font-size: 20px;
+    text-align: center;
+    text-shadow: 0 0 8px #00ff00;
+}
+
+/* Cassette Deck */
+.cassetteDeck {
+    background: linear-gradient(180deg, #2a2a2a, #1a1a1a);
+    border: 3px solid #444;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.cassetteWindow {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 10px;
+    padding: 8px;
+    background: #0a0a0a;
+    border-radius: 4px;
+}
+
+.cassetteReel {
+    width: 25px;
+    height: 25px;
+    background: radial-gradient(circle, #fff 20%, #666 30%, #333 100%);
+    border-radius: 50%;
+    border: 2px solid #555;
+}
+
+.cassetteReel.spinning {
+    animation: spin 0.5s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.deckButtons {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.deckButtons button {
+    width: 35px;
+    height: 28px;
+    background: linear-gradient(180deg, #c0c0c0, #808080);
+    border: 2px solid;
+    border-top-color: #e0e0e0;
+    border-left-color: #e0e0e0;
+    border-right-color: #404040;
+    border-bottom-color: #404040;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.deckButtons button:active {
+    border-top-color: #404040;
+    border-left-color: #404040;
+    border-right-color: #e0e0e0;
+    border-bottom-color: #e0e0e0;
+}
+
+/* EQ Section */
+.eqSection {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px;
+    background: linear-gradient(180deg, #333, #222);
+    border-radius: 6px;
+}
+
+.eqSlider {
+    width: 30px;
+    height: 60px;
+    -webkit-appearance: slider-vertical;
+    appearance: slider-vertical;
+    background: #1a1a1a;
+    cursor: pointer;
+}
+
+/* Track List */
+.trackList {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.trackBtn {
+    width: 40px;
+    height: 30px;
+    background: linear-gradient(180deg, #ffd700, #cc9900);
+    border: 2px solid #ffee88;
+    border-radius: 4px;
+    color: #000;
+    font-family: 'VT323', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.trackBtn:hover {
+    background: linear-gradient(180deg, #ffee44, #ffd700);
+}
+
+.trackBtn.active {
+    box-shadow: 0 0 15px #ffd700;
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+    .player {
+        max-width: 100%;
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    .handle {
+        width: 120px;
+        height: 15px;
+        top: -15px;
+    }
+
+    .body {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .speaker {
+        display: none;
+    }
+
+    .center {
+        width: 100%;
+    }
+
+    .vuMeters {
+        gap: 15px;
+    }
+
+    .vuMeter {
+        width: 60px;
+        height: 40px;
+    }
+
+    .vuNeedle {
+        height: 28px;
+    }
+
+    .display {
+        padding: 6px;
+    }
+
+    .freqDisplay {
+        font-size: 10px;
+    }
+
+    .songDisplay {
+        font-size: 14px;
+    }
+
+    .timeDisplay {
+        font-size: 16px;
+    }
+
+    .cassetteDeck {
+        padding: 8px;
+    }
+
+    .cassetteWindow {
+        gap: 20px;
+        padding: 6px;
+        margin-bottom: 8px;
+    }
+
+    .cassetteReel {
+        width: 20px;
+        height: 20px;
+    }
+
+    .deckButtons button {
+        width: 30px;
+        height: 24px;
+        font-size: 10px;
+    }
+
+    .eqSection {
+        gap: 6px;
+        padding: 6px;
+    }
+
+    .eqSlider {
+        width: 25px;
+        height: 45px;
+    }
+
+    .trackList {
+        gap: 6px;
+    }
+
+    .trackBtn {
+        width: 35px;
+        height: 26px;
+        font-size: 12px;
+    }
+}
+
+/* Responsive - Small Mobile */
+@media (max-width: 360px) {
+    .player {
+        padding: 10px;
+    }
+
+    .vuMeter {
+        width: 50px;
+        height: 35px;
+    }
+
+    .songDisplay {
+        font-size: 12px;
+    }
+
+    .timeDisplay {
+        font-size: 14px;
+    }
+
+    .trackBtn {
+        width: 30px;
+        height: 24px;
+        font-size: 10px;
+    }
+}

@@ -1,0 +1,502 @@
+/* Atari 2600 Console Theme */
+
+.player {
+    width: 100%;
+    max-width: 380px;
+    background: linear-gradient(180deg,
+            #8b6914 0%,
+            #6b5210 20%,
+            #5a4510 40%,
+            #1a1a1a 40%,
+            #0a0a0a 100%);
+    border: 4px solid #3d2817;
+    border-radius: 12px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* Wood Panel Top */
+.woodPanel {
+    height: 60px;
+    background:
+        repeating-linear-gradient(90deg,
+            #8b6914 0px,
+            #9b7924 5px,
+            #7b5904 10px,
+            #8b6914 15px);
+    border-bottom: 3px solid #3d2817;
+    position: relative;
+}
+
+.woodPanel::after {
+    content: 'ATARI';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #c0c0c0;
+    font-size: 16px;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 0 #000;
+}
+
+/* Cartridge Slot */
+.cartridgeSlot {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.cartridge {
+    width: 200px;
+    height: 80px;
+    background: linear-gradient(180deg, #2a2a2a, #1a1a1a);
+    border: 3px solid #444;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.cartridge::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 10px;
+    background: #333;
+    border-radius: 0 0 4px 4px;
+}
+
+.cartridgeLabel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #ff6b35, #cc5528);
+    border-radius: 4px;
+}
+
+.cartridgeLabel span {
+    color: #000;
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+/* LED Display */
+.ledDisplay {
+    margin: 0 15px 15px;
+    padding: 15px;
+    background: #0a0a0a;
+    border: 3px solid #333;
+    border-radius: 6px;
+}
+
+.ledRow {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.ledChar {
+    width: 12px;
+    height: 18px;
+    background: #1a0a00;
+    border: 1px solid #331a00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff6b35;
+    font-size: 10px;
+    text-shadow: 0 0 5px #ff6b35;
+}
+
+.ledTime {
+    text-align: center;
+    color: #00ff00;
+    font-size: 18px;
+    text-shadow:
+        0 0 10px #00ff00,
+        2px 2px 0 #004400;
+    letter-spacing: 3px;
+}
+
+/* Switch Row */
+.switchRow {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    background: linear-gradient(180deg, #1a1a1a, #0a0a0a);
+    border-top: 2px solid #333;
+}
+
+.switch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.switch span {
+    color: #888;
+    font-size: 6px;
+    letter-spacing: 1px;
+}
+
+.toggleSwitch {
+    width: 40px;
+    height: 20px;
+    background: linear-gradient(180deg, #666, #333);
+    border-radius: 10px;
+    padding: 3px;
+    border: 2px solid #444;
+}
+
+.toggleKnob {
+    width: 14px;
+    height: 14px;
+    background: linear-gradient(180deg, #c0c0c0, #808080);
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.momentaryBtn {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(180deg, #666, #333);
+    border: 3px solid #555;
+    border-radius: 50%;
+    color: #c0c0c0;
+    font-size: 8px;
+    cursor: pointer;
+    box-shadow:
+        0 4px 0 #222,
+        inset 0 -4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.momentaryBtn:active {
+    transform: translateY(2px);
+    box-shadow:
+        0 2px 0 #222,
+        inset 0 -2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Joystick Section */
+.joystickSection {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+.joystick {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(180deg, #2a2a2a, #1a1a1a);
+    border: 3px solid #444;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.joystickBase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.joyUp,
+.joyDown {
+    width: 30px;
+    height: 25px;
+    background: linear-gradient(180deg, #555, #333);
+    border: 2px solid #666;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.joyMiddle {
+    display: flex;
+    gap: 5px;
+}
+
+.joyLeft,
+.joyRight {
+    width: 25px;
+    height: 30px;
+    background: linear-gradient(180deg, #555, #333);
+    border: 2px solid #666;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.joyFire {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(180deg, #ff0000, #cc0000);
+    border: 3px solid #ff3333;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+.joyFire:active {
+    transform: scale(0.95);
+}
+
+/* Track Selection */
+.trackSelect {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.trackBtn {
+    width: 40px;
+    height: 35px;
+    background: linear-gradient(180deg, #ff6b35, #cc5528);
+    border: 3px solid #000;
+    border-radius: 0;
+    color: #000;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #000;
+}
+
+.trackBtn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #000;
+}
+
+.trackBtn.active {
+    background: linear-gradient(180deg, #00ff00, #00cc00);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5), 4px 4px 0 #000;
+}
+
+/* Volume Section */
+.volumeSection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px 20px;
+    justify-content: center;
+}
+
+.volumeSection span {
+    color: #888;
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+.volumeSlider {
+    width: 150px;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #333;
+    border: 2px solid #000;
+    cursor: pointer;
+}
+
+.volumeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 24px;
+    background: linear-gradient(180deg, #ffd700, #cc9900);
+    border: 2px solid #000;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 #000;
+}
+
+.volumeSlider::-moz-range-thumb {
+    width: 16px;
+    height: 24px;
+    background: linear-gradient(180deg, #ffd700, #cc9900);
+    border: 2px solid #000;
+    cursor: pointer;
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+    .player {
+        max-width: 100%;
+    }
+
+    .woodPanel {
+        height: 50px;
+    }
+
+    .woodPanel::after {
+        font-size: 12px;
+        right: 15px;
+        letter-spacing: 3px;
+    }
+
+    .cartridgeSlot {
+        padding: 12px;
+    }
+
+    .cartridge {
+        width: 160px;
+        height: 65px;
+    }
+
+    .cartridge::before {
+        width: 50px;
+        height: 8px;
+    }
+
+    .cartridgeLabel {
+        padding: 8px 15px;
+    }
+
+    .cartridgeLabel span {
+        font-size: 6px;
+    }
+
+    .ledDisplay {
+        margin: 0 12px 12px;
+        padding: 12px;
+    }
+
+    .ledChar {
+        width: 10px;
+        height: 15px;
+        font-size: 8px;
+    }
+
+    .ledTime {
+        font-size: 14px;
+    }
+
+    .switchRow {
+        padding: 12px;
+    }
+
+    .switch span {
+        font-size: 5px;
+    }
+
+    .toggleSwitch {
+        width: 35px;
+        height: 18px;
+    }
+
+    .toggleKnob {
+        width: 12px;
+        height: 12px;
+    }
+
+    .momentaryBtn {
+        width: 26px;
+        height: 26px;
+        font-size: 7px;
+    }
+
+    .joystickSection {
+        padding: 12px;
+    }
+
+    .joystick {
+        width: 100px;
+        height: 100px;
+    }
+
+    .joyUp,
+    .joyDown {
+        width: 26px;
+        height: 22px;
+        font-size: 8px;
+    }
+
+    .joyLeft,
+    .joyRight {
+        width: 22px;
+        height: 26px;
+        font-size: 8px;
+    }
+
+    .joyFire {
+        width: 35px;
+        height: 35px;
+        font-size: 12px;
+    }
+
+    .trackSelect {
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .trackBtn {
+        width: 35px;
+        height: 30px;
+        font-size: 8px;
+        box-shadow: 3px 3px 0 #000;
+    }
+
+    .volumeSection {
+        padding: 8px 15px 15px;
+    }
+
+    .volumeSection span {
+        font-size: 7px;
+    }
+
+    .volumeSlider {
+        width: 120px;
+    }
+}
+
+/* Responsive - Small Mobile */
+@media (max-width: 360px) {
+    .woodPanel {
+        height: 45px;
+    }
+
+    .woodPanel::after {
+        font-size: 10px;
+    }
+
+    .cartridge {
+        width: 140px;
+        height: 55px;
+    }
+
+    .joystick {
+        width: 85px;
+        height: 85px;
+    }
+
+    .joyFire {
+        width: 30px;
+        height: 30px;
+        font-size: 10px;
+    }
+
+    .trackBtn {
+        width: 30px;
+        height: 26px;
+        font-size: 7px;
+    }
+
+    .volumeSlider {
+        width: 100px;
+    }
+}

@@ -1,0 +1,408 @@
+/* Technics SL-1200 Turntable Theme */
+
+.player {
+    width: 100%;
+    max-width: 400px;
+    background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+    border: 4px solid #444;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    font-family: 'VT323', monospace;
+}
+
+.turntable {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Platter */
+.platter {
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, #333 0%, #1a1a1a 100%);
+    border-radius: 50%;
+    border: 4px solid #444;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.slipmat {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, #2a2a2a 30%, #1a1a1a 100%);
+    border-radius: 50%;
+}
+
+.record {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle,
+            #0a0a0a 0%,
+            #0a0a0a 15%,
+            #1a1a1a 16%,
+            #0f0f0f 20%,
+            #1a1a1a 25%,
+            #0f0f0f 30%,
+            #1a1a1a 35%,
+            #0f0f0f 40%,
+            #1a1a1a 45%,
+            #0f0f0f 50%,
+            #1a1a1a 55%,
+            #0f0f0f 60%,
+            #1a1a1a 70%,
+            #0a0a0a 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.record.spinning {
+    animation: spin 1.8s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.recordLabel {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ff0066, #cc0052);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 8px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.recordGrooves {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+/* Tonearm */
+.tonearm {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    width: 120px;
+    height: 10px;
+    transform-origin: right center;
+    transition: transform 0.5s;
+}
+
+.armBase {
+    position: absolute;
+    right: 0;
+    top: -10px;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, #666, #333);
+    border-radius: 50%;
+    border: 2px solid #555;
+}
+
+.arm {
+    position: absolute;
+    right: 15px;
+    top: 3px;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #c0c0c0, #808080);
+    transform-origin: right center;
+}
+
+.headshell {
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 20px;
+    height: 8px;
+    background: #c0c0c0;
+    border-radius: 2px;
+}
+
+/* Control Panel */
+.controlPanel {
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.startStop {
+    width: 100%;
+    height: 45px;
+    background: linear-gradient(180deg, #444, #222);
+    border: 3px solid #555;
+    border-radius: 8px;
+    color: #c0c0c0;
+    font-family: 'VT323', monospace;
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.startStop:hover {
+    background: linear-gradient(180deg, #555, #333);
+}
+
+.startStop.active {
+    background: linear-gradient(180deg, #00cc00, #009900);
+    color: #000;
+    box-shadow: 0 0 15px rgba(0, 204, 0, 0.5);
+}
+
+/* Pitch Section */
+.pitchSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    background: #1a1a1a;
+    border: 2px solid #333;
+    border-radius: 6px;
+}
+
+.pitchLabel {
+    color: #888;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.pitchSlider {
+    width: 20px;
+    height: 100px;
+    -webkit-appearance: slider-vertical;
+    appearance: slider-vertical;
+    background: linear-gradient(180deg, #ff0000 0%, #333 40%, #333 60%, #00ff00 100%);
+    cursor: pointer;
+}
+
+.pitchValue {
+    color: #ff0066;
+    font-size: 14px;
+    text-shadow: 0 0 5px #ff0066;
+}
+
+/* RPM Selector */
+.rpmSelector {
+    display: flex;
+    gap: 10px;
+}
+
+.rpmBtn {
+    flex: 1;
+    padding: 8px;
+    background: linear-gradient(180deg, #333, #1a1a1a);
+    border: 2px solid #555;
+    border-radius: 4px;
+    color: #c0c0c0;
+    font-family: 'VT323', monospace;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.rpmBtn:hover {
+    background: linear-gradient(180deg, #444, #2a2a2a);
+}
+
+/* Skip Buttons */
+.skipButtons {
+    display: flex;
+    gap: 10px;
+}
+
+.skipButtons button {
+    flex: 1;
+    padding: 10px;
+    background: linear-gradient(180deg, #333, #1a1a1a);
+    border: 2px solid #555;
+    border-radius: 4px;
+    color: #c0c0c0;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.skipButtons button:hover {
+    background: linear-gradient(180deg, #444, #2a2a2a);
+}
+
+/* Info Display */
+.infoDisplay {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: #0a0a0a;
+    border: 2px solid #333;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+.trackNum {
+    color: #00ff00;
+    font-size: 16px;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+.timeDisplay {
+    color: #ff0066;
+    font-size: 20px;
+    text-shadow: 0 0 8px #ff0066;
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+    .player {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .turntable {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .platter {
+        width: 180px;
+        height: 180px;
+    }
+
+    .slipmat {
+        width: 160px;
+        height: 160px;
+    }
+
+    .record {
+        width: 140px;
+        height: 140px;
+    }
+
+    .recordLabel {
+        width: 45px;
+        height: 45px;
+        font-size: 6px;
+    }
+
+    .recordGrooves {
+        width: 130px;
+        height: 130px;
+    }
+
+    .tonearm {
+        display: none;
+    }
+
+    .controlPanel {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .startStop {
+        width: auto;
+        padding: 0 20px;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .pitchSection {
+        padding: 8px;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .pitchSlider {
+        width: 80px;
+        height: 15px;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    .rpmSelector {
+        gap: 8px;
+    }
+
+    .rpmBtn {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    .skipButtons {
+        gap: 8px;
+    }
+
+    .skipButtons button {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+
+    .infoDisplay {
+        padding: 8px;
+    }
+
+    .trackNum {
+        font-size: 14px;
+    }
+
+    .timeDisplay {
+        font-size: 16px;
+    }
+}
+
+/* Responsive - Small Mobile */
+@media (max-width: 360px) {
+    .platter {
+        width: 150px;
+        height: 150px;
+    }
+
+    .slipmat {
+        width: 130px;
+        height: 130px;
+    }
+
+    .record {
+        width: 115px;
+        height: 115px;
+    }
+
+    .recordLabel {
+        width: 38px;
+        height: 38px;
+        font-size: 5px;
+    }
+
+    .startStop {
+        height: 36px;
+        font-size: 11px;
+    }
+}
