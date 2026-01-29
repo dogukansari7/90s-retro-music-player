@@ -5,13 +5,13 @@ import styles from "./page.module.css";
 import Player from "./components/Player/Player";
 import ThemeSelector from "./components/ThemeSelector/ThemeSelector";
 
-// Şarkı listesi - public/Music klasöründen yüklenen NCS şarkılar
+// Şarkı listesi - public/music klasöründen yüklenen NCS şarkılar
 const songs = [
-  { name: "BENJAMINRICH & Daniel Javan - Too Late", file: "/Music/BENJAMINRICH, Daniel Javan - Too Late  Hip-Hop  NCS - Copyright Free Music.mp3" },
-  { name: "Cartoon - On & On (feat. Daniel Levi)", file: "/Music/Cartoon - On & On (feat. Daniel Levi) [NCS Release].mp3" },
-  { name: "Sean Pitaro - Passport", file: "/Music/Sean Pitaro - Passport  Hyperpop  NCS - Copyright Free Music.mp3" },
-  { name: "Spektrem - Shine", file: "/Music/Spektrem - Shine [NCS Release].mp3" },
-  { name: "Sub Urban - Cradles", file: "/Music/Sub Urban - Cradles [NCS Release].mp3" },
+  { name: "BENJAMINRICH & Daniel Javan - Too Late", file: "/music/BENJAMINRICH, Daniel Javan - Too Late  Hip-Hop  NCS - Copyright Free Music.mp3" },
+  { name: "Cartoon - On & On (feat. Daniel Levi)", file: "/music/Cartoon - On & On (feat. Daniel Levi) [NCS Release].mp3" },
+  { name: "Sean Pitaro - Passport", file: "/music/Sean Pitaro - Passport  Hyperpop  NCS - Copyright Free Music.mp3" },
+  { name: "Spektrem - Shine", file: "/music/Spektrem - Shine [NCS Release].mp3" },
+  { name: "Sub Urban - Cradles", file: "/music/Sub Urban - Cradles [NCS Release].mp3" },
 ];
 
 export default function Home() {
